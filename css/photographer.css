@@ -1,0 +1,319 @@
+#contact_modal {
+    display: none;
+}
+
+.photograph-header {
+    background-color: #fafafa;
+    height: 300px;
+    margin: 0 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* modification nom/ville/pays */
+#header-text{
+    display: flex;
+    flex-direction: column;
+}
+h2, h3, h4{
+    margin: 5px;
+}
+#nom{
+    font-size: 40px;
+}
+
+/* fin modification nom/ville/pays */
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+form label {
+    color: #312E2E;
+    font-size: 20px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Début modification */
+
+#portrait {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+
+#filter{
+    display: flex;
+    padding: 0px 100px;
+    padding-bottom: 20px;
+}
+select{
+    background-color: #901C1C;
+    color: white;
+    border-radius: 10px;
+}
+
+#photos {
+    display: flex;
+    justify-content: start;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 0px 100px;
+}
+
+.photo{
+    display: flex;
+    flex-direction: column;
+}
+
+.media{
+    height: 300px;
+    width: 300px;
+    max-height: 300px;
+    max-width: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo_description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.photo_likes{
+    margin-top: -6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo_likes_nombre{
+    display: flex;
+    flex-direction: row;
+}
+
+.media_likes_img{
+    height: 25px;
+    width: 25px;
+}
+
+.likes{
+    display: flex;
+    flex-direction: row;
+    height: 10px;
+    width: 10px;
+}
+
+#main h2 {
+    color: #D3573C;
+}
+
+#main h3 {
+    color: #901C1C;
+}
+
+/* ajout pour le prix en bas à droite */
+.encart_prix_photographe{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    right: 60px;
+    height: 90px;
+    width: 375px;
+    background-color: #DB8876;
+    color: black;
+    border-radius: 5px 5px 0 0;
+    padding: 0 20px;
+    font-size: 24px;
+}
+
+/* .photos .likes{
+    display: flex;
+    flex: 1;
+    align-items: center;
+} */
+
+/* fin ajout */
+
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-media {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+.close, .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.close {
+    top: 50px;
+    right: 100px;
+    font-size: 35px;
+}
+
+.prev, .next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 15%;
+}
+
+.next {
+    right: 17%;
+}
+
+.close:hover,
+.close:focus,
+.prev:hover,
+.prev:focus,
+.next:hover,
+.next:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Contact Modal */
+
+.modal-content{
+    background-color: #DB8876;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.contact-modal-content h2 {
+    margin-top: 0;
+}
+
+.contact-modal-content #form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-modal-content #form label {
+    margin-top: 10px;
+}
+
+.contact-modal-content #form input,
+.contact-modal-content #form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    height: 10px;
+}
+
+.contact-modal-content #send {
+    background-color: #b03a2e;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100px;
+}
+
+#form input{
+    width: 300px;
+}

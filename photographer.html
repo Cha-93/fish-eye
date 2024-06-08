@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <title>Fisheye - photographe</title>
+</head>
+<body>
+<header>
+    <img src="assets/images/logo.png" class="logo" alt="logo"/>
+</header>
+
+<main id="main">
+    <div class="photograph-header">
+        <div id="header-text">
+            <h2 id="nom"></h2>
+            <h3><span id="ville"></span>, <span id="pays"></span></h3>
+            <h4 id="tag"></h4>
+        </div>
+        <button class="contact_button" onclick="displayContactModal()">Contactez-moi</button>
+        <img src="" id="portrait" alt="Portrait du photographe"/>
+    </div>
+    <div id="filter">
+        <p>Trier par</p>
+        <select name="pictures" id="pictures-select">
+            <option value="popularity">Popularité</option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
+        </select>
+    </div>
+    <!-- conteneur qui contien toutes les photos -->
+    <div id="photos"></div>
+</main>
+
+<!-- Modal des medias -->
+<div id="media-modal" class="modal">
+  <span class="close" onclick="closeModal()">
+    <img src="assets/icons/cross.svg"/>
+  </span>
+  <span class="prev" onclick="changeMedia(-1)">
+    <img src="assets/icons/arrow-left.svg"/>
+  </span>
+  <span class="next" onclick="changeMedia(1)">
+    <img src="assets/icons/arrow-right.svg"/>
+  </span>
+  <div class="modal-content">
+      <img id="modal-image" class="modal-media">
+      <video id="modal-video" class="modal-media" controls></video>
+  </div>
+</div>
+
+<div id="contact-modal" class="modal">
+  <div class="modal-content contact-modal-content">
+      <span class="close" onclick="closeContactModal()">
+        <img src="assets/icons/cross.svg"/> 
+      </span>
+      <h2>Contactez-moi</h2>
+
+      <form id="form">
+        <label for="first-name">Prénom</label>
+        <input type="text" id="first-name" name="first-name">
+        <label for="last-name">Nom</label>
+        <input type="text" id="last-name" name="last-name">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message"></textarea>
+        <div id="send" onclick="handleSubmit(event)">Envoyer</div>
+    </form>
+  </div>
+</div>  
+
+<div class="encart_prix_photographe">
+    <div class="encart_likes">
+        <label>297 081</label>
+        <img src="assets/icons/heart.svg" alt="Likes"/>
+    </div>
+    <div id="prix_photographe"></div>
+</div>
+
+<script src="scripts/pages/photographer.js"></script>
+<script src="scripts/utils/contactForm.js"></script>
+</body>
+</html>
