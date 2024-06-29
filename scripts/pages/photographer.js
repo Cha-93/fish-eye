@@ -4,8 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let country = document.getElementById("pays");
     let tagline = document.getElementById("tag");
 
+    let contact_button = document.getElementsByClassName("contact_button");
+    contact_button[0].addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            displayModal();
+        }
+    });
+
     let imgListe = document.getElementsByClassName('logo');
     let img = imgListe[0];
+
+    img.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            window.location.href = 'index.html';
+        }
+    });
 
     img.onclick = function() {
         window.location.href = 'index.html';
@@ -190,13 +203,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fonction qui retourne le html de l'image qui va être injecter dans le html de la page
         createMediaElement() {
             return `
-                <div class="photo">
-                    <img src="FishEye_Photos/Sample Photos/${this.photographerId}/${this.image}" class="media" alt="${this.title}">
+                <div class="photo" tabindex="0">
+                    <img src="FishEye_Photos/Sample Photos/${this.photographerId}/${this.image}" class="media" alt="media ${this.title}">
                     <div class="photo_description">
                         <h3 class="photo_nom">${this.title}</h3>
                         <div class="photo_likes">
                             <p class="photo_likes_nombre">${this.likes}</p>
-                            <img src="assets/icons/heart-red.svg" class="media_likes_img"/>
+                            <img src="assets/icons/heart-red.svg" class="media_likes_img" alt=${this.title}/>
                         </div>
                     </div>
                 </div>`;
@@ -213,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fonction qui retourne le html de la video qui va être injecter dans le html de la page
         createMediaElement() {
             return `
-                <div class="video">
+                <div class="video" tabindex="0">
                     <video controls class="media">
                         <source src="FishEye_Photos/Sample Photos/${this.photographerId}/${this.video}" type="video/mp4">
                         Your browser does not support the video tag.
@@ -222,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3 class="video_nom">${this.title}</h3>
                         <div class="video_likes">
                             <p class="video_likes_nombre">${this.likes}</p>
-                            <img src="assets/icons/heart-red.svg" class="media_likes_img"/>
+                            <img src="assets/icons/heart-red.svg" class="media_likes_img" alt="media ${this.title}"/>
                         </div>
                     </div>
                 </div>`;

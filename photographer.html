@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-    <img src="assets/images/logo.png" class="logo" alt="logo"/>
+    <img src="assets/images/logo.png" class="logo" alt="logo" tabindex="0"/>
 </header>
 
 <main id="main">
@@ -36,13 +36,13 @@
 
 <!-- Modal des medias -->
 <div id="media-modal" class="modal">
-  <span class="close" onclick="closeModal()">
+  <span class="close" onclick="closeModal()" tabindex="0">
     <img src="assets/icons/cross.svg"/>
   </span>
-  <span class="prev" onclick="changeMedia(-1)">
+  <span class="prev" onclick="changeMedia(-1)" tabindex="0">
     <img src="assets/icons/arrow-left.svg"/>
   </span>
-  <span class="next" onclick="changeMedia(1)">
+  <span class="next" onclick="changeMedia(1)" tabindex="0">
     <img src="assets/icons/arrow-right.svg"/>
   </span>
   <div class="modal-content">
@@ -53,7 +53,7 @@
 
 <div id="contact-modal" class="modal">
   <div class="modal-content contact-modal-content">
-      <span class="close" onclick="closeContactModal()">
+      <span class="close" onclick="closeContactModal()" tabindex="0">
         <img src="assets/icons/cross.svg"/> 
       </span>
       <h2>Contactez-moi</h2>
@@ -67,7 +67,7 @@
         <input type="email" id="email" name="email">
         <label for="message">Votre message</label>
         <textarea id="message" name="message"></textarea>
-        <div id="send" onclick="handleSubmit(event)">Envoyer</div>
+        <div id="send" onclick="handleSubmit(event)" tabindex="0">Envoyer</div>
     </form>
   </div>
 </div>  

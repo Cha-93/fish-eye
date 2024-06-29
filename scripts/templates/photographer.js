@@ -5,6 +5,14 @@ function photographerTemplate(data) {
     
     function getUserCardDOM() {
         const article = document.createElement('article');
+        article.setAttribute("tabindex", 0);
+        article.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                displayModal();
+            }
+        });
+
+
         const img = document.createElement('img');
         img.setAttribute("src", picture);
         const h2 = document.createElement( 'h2');
@@ -26,7 +34,12 @@ function photographerTemplate(data) {
             window.location.href = `photographer.html?id=${id}`;
         });
         
-        
+
+        article.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                window.location.href = `photographer.html?id=${id}`;
+            }
+        });
         // fin etape 4
        
         return (article);
